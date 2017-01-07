@@ -3,6 +3,7 @@ dist: trusty
 addons:
   apt:
     packages:
+    - texlive-latex-recommended
     - texlive-latex-extra
     - texlive-luatex
 script:

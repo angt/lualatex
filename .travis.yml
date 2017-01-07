@@ -1,8 +1,15 @@
 sudo: required
 dist: trusty
 addons:
-    apt:
-        packages:
-            - texlive-full
+  apt:
+    packages:
+    - texlive-lualatex
 script:
-    - lualatex main
+- lualatex main
+deploy:
+  provider: releases
+  api_key:
+    secure: kgr5Xwx1rqRhTOq5wUj8u+gAmiGcJ/1E2InQR1hJMdBrfY1VCfkSc72641ydId97cSrE4b97pGVRlEv7p9MbbtLwnTQAFrCIQGP9VD/9iZX60FaCDEr98IlLiD+IuYpKPjIvdD0BmP7ehv1gdwcymFvtUL9zkuehL4cJcW4+nHIEJJy2mHdlXKO9DedxqDSBunyoOMFKBOa5gejRQkzu77qsOjy4/WZFOCRY2EH2oDw4xbphxmoqoPyW2s7DTqVC31/knPYYEyjyMyQmo2G8l9QpYFiOF8tK3KvRCmflBNo3n0kBnUwUVub7raGh9tWgwdeaa5UZp3wMcPhriCBvs0jRdUfjlDkpGLgGgXL/GSzrtJSh+sbk/UQT94cCyj0iYzPOhVgFmBySLbLXKiQtjdceqC3sQk7A0cWPfRLd2x9JR1KjH0wmZx7PUUg0jtIG54qcJQ2ZSuFdASsI9SghzKamnGZdKf5bRB81B4hZOWf3KlHdY2C1D96QXQA9TyhMPlJe8k4/oKTvy4yWpuWUB31T+nQhmnOgEJLXSm7OmAHctZDWRQocN0On+SNR7nfa0IKyGSL0Rl4KcDz94wTtzwLjt0LuMyULgKHXXb/sK6CaI5vquvQBZZQq8rq9hHemgSSZEKScaggi3dOlPYEM93r7vwcr40ALKTelwqyYCLk=
+  file: main.pdf
+  on:
+    repo: angt/lualatex

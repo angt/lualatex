@@ -3,11 +3,7 @@ dist: trusty
 addons:
   apt:
     packages:
-    - lmodern
-    - texlive-fonts-recommended
-    - texlive-latex-recommended
-    - texlive-latex-extra
-    - texlive-luatex
+    - texlive-full
 script:
 - lualatex main
 - lualatex main

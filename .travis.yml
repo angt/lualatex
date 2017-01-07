@@ -3,8 +3,10 @@ dist: trusty
 addons:
   apt:
     packages:
-    - texlive-lualatex
+    - texlive-latex-extra
+    - texlive-luatex
 script:
+- lualatex main
 - lualatex main
 deploy:
   provider: releases

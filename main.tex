@@ -1,0 +1,71 @@
+\documentclass[a4paper,oneside,12pt]{article}
+\usepackage{microtype}
+\usepackage[utf8]{luainputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+\usepackage{tikz}
+\tikzset{samples=100}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{lualatex-math}
+
+\usepackage{lipsum}
+
+\title{Titre du rapport}
+\date{\today}
+\author{Adrien Gallouët}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \lipsum[50]
+\end{abstract}
+
+\section{Introduction}
+
+\lipsum[30]
+
+\begin{center}
+\begin{tikzpicture}
+    \def\xmin{-pi-.2}
+    \def\xmax{pi+.2}
+    \def\ymin{-1.5}
+    \def\ymax{1.5}
+    \draw[help lines] (\xmin,\ymin) grid (\xmax,\ymax);
+    \draw[->] (\xmin,0) -- (\xmax,0);
+    \draw[->] (0,\ymin) -- (0,\ymax);
+    \draw[domain=-pi:pi,blue] plot (\x,{sin(\x r)});.
+    \draw[domain=-pi:pi,red]  plot (\x,{cos(\x r)});.
+\end{tikzpicture}
+\end{center}
+
+\lipsum[30]
+
+\begin{center}
+\begin{tikzpicture}[node distance=2cm, auto]
+    \node (P) {$P$};
+    \node (B) [right of=P] {$B$};
+    \node (A) [below of=P] {$A$};
+    \node (C) [below of=B] {$C$};
+    \node (P1) [left of=P, above of=P] {$\hat{P}$};
+    \draw[->] (P) to node {$\bar{f}$} (B);
+    \draw[->] (P) to node [swap] {$\bar{g}$} (A);
+    \draw[->] (A) to node [swap] {$f$} (C);
+    \draw[->] (B) to node {$g$} (C);
+    \draw[->,bend right] (P1) to node [swap] {$\hat{g}$} (A);
+    \draw[->,bend left] (P1) to node {$\hat{f}$} (B);
+    \draw[->,dashed] (P1) to node {$k$} (P);
+\end{tikzpicture}
+\end{center}
+
+\lipsum[100]
+
+\section{Conclusion}
+
+\lipsum[50]
+
+\end{document}
